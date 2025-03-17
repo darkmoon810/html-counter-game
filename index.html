@@ -1,0 +1,57 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Game</title>
+    <style>
+        body {
+            background-image: url('laptop.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        #counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #gameButton {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 200px;
+            height: 100px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0</div>
+    <button id="gameButton"></button>
+    <script>
+        let count = 0;
+        const counterDisplay = document.getElementById('counter');
+        const gameButton = document.getElementById('gameButton');
+
+        gameButton.addEventListener('click', () => {
+            count++;
+            counterDisplay.textContent = count;
+            if (count === 20) {
+                location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
